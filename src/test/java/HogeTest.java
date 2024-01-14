@@ -8,14 +8,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class HogeTest {
     @Test
-    void LinkedHashMapのデータ順序が同じであること() {
-        // 準備
+    void LinkedHashMapのデータ登録順が同じであること() {
+        // 期待値の作成
         Map<String, String> expected = new LinkedHashMap<>();
-        // 意図的に実測値とは順序を逆にしてテストが失敗することを予想するが、実行するとテスト成功してしまう
+        // 意図的に実測値とはデータ登録順を逆にしてテストが失敗することを予想するが、実行するとテスト成功してしまう
         expected.put("b1", "b2");
         expected.put("a1", "a2");
 
-        // 実行
+        // 実測値の作成
         Map<String, String> actual = new LinkedHashMap<>();
         actual.put("a1", "a2");
         actual.put("b1", "b2");
@@ -25,14 +25,14 @@ class HogeTest {
     }
 
     @Test
-    void LinkedHashMapをArrayListに変換してデータ順序が同じであること() {
-        // 準備
+    void LinkedHashMapをArrayListに変換してデータ登録順が同じであること() {
+        // 期待値の作成
         Map<String, String> expected = new LinkedHashMap<>();
-        // 意図的に実測値とは順序を逆にしてテストが失敗することを予想し、実行するとテスト失敗する
+        // 意図的に実測値とはデータ登録順を逆にしてテストが失敗することを予想し、実行するとテスト失敗する
         expected.put("b1", "b2");
         expected.put("a1", "a2");
 
-        // 実行
+        // 実測値の作成
         Map<String, String> actual = new LinkedHashMap<>();
         actual.put("a1", "a2");
         actual.put("b1", "b2");
